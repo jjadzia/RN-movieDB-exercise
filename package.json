@@ -41,7 +41,7 @@
     "@types/jest": "^29.5.12",
     "@types/react": "~18.2.45",
     "@types/react-test-renderer": "^18.0.7",
-    "eslint": "9.x",
+    "eslint": "^9.8.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-native": "^4.1.0",
     "globals": "^15.9.0",
