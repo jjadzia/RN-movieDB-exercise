@@ -14,8 +14,12 @@ export default [
     rules: {
       'prettier/prettier': 'error',
     },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
   },
-
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
