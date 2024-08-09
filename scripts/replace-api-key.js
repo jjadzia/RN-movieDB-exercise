@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
 const path = require('path');
 
@@ -8,7 +9,7 @@ if (!apiKey) {
   process.exit(1);
 }
 
-const filePath = path.join(__dirname, '../network/axiosConfigsTMDB.ts');
+const filePath = path.join(__dirname, 'network/axiosConfigsTMDB.ts');
 
 fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {

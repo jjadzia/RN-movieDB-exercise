@@ -5,6 +5,9 @@ import { useThemedStyles } from '@/hooks/useThemedStyles';
 import { createStyles } from './styles';
 import { SearchScreenStrings } from '@/assets/strings/en';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const TMBBLgog = require('@/assets/images/TMDB_logo.png');
+
 type Props = ComponentProps<typeof View> & { width?: number; height?: number };
 
 export function TMDBCredits({ style, height, width }: Props) {
@@ -14,8 +17,7 @@ export function TMDBCredits({ style, height, width }: Props) {
     <View style={[styles.container, style]}>
       <Text style={styles.text}>{SearchScreenStrings.TMDBCredits}</Text>
       <Image
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        source={require('@/assets/images/TMDB_logo.png')}
+        source={TMBBLgog}
         style={{ width: width ?? '100%', height: height ?? 50 }}
         resizeMode="contain"
       />
