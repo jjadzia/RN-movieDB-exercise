@@ -14,11 +14,11 @@ export async function getTMDBSearchResults(searchedText: string, page = 1) {
   };
 }
 
-function extractDataFromSearchResults(
+export function extractDataFromSearchResults(
   searchResults: TMDBSearchResponse
 ): Array<FilmData> {
   return searchResults.data.results.map((i) => ({
-    year: new Date(i.release_date)?.getFullYear(),
+    year: i.release_date ? new Date(i.release_date)?.getFullYear() : undefined,
     title: i.title,
     image: createTMDBImageUrl(i.poster_path),
     id: i.id,

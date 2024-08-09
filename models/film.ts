@@ -1,6 +1,6 @@
 export type FilmData = {
   title: string;
-  year: number;
+  year?: number;
   image: string;
   id: number;
 };
