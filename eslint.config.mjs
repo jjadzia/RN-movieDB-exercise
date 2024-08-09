@@ -19,6 +19,14 @@ export default [
         version: 'detect',
       },
     },
+    overrides: [
+      {
+        files: ['scripts/**/*.js'],
+        env: {
+          node: true,
+        },
+      },
+    ],
   },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
