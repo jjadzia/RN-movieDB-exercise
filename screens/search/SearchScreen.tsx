@@ -36,6 +36,12 @@ export function SearchScreen() {
     if (hasNextPage) fetchNextPage();
   }, [isFetchingNextPage, hasNextPage, fetchNextPage]);
 
+  const onTextInputBlur = useCallback(
+    (event: NativeSyntheticEvent<TextInputFocusEventData>) => {
+      if (!isFetching) setSearchParam(event.nativeEvent.text);
+    },
+    [isFetching, setSearchParam]
+  );
   const Footer = useMemo(() => {
     return results.length ? <TMDBCredits /> : null;
   }, [results.length]);
@@ -47,9 +53,7 @@ export function SearchScreen() {
         value={inputValue}
         onChangeText={setInputValue}
         placeholder={SearchScreenStrings.InputPlaceholder}
-        onBlur={(event: NativeSyntheticEvent<TextInputFocusEventData>) =>
-          setSearchParam(event.nativeEvent.text)
-        }
+        onBlur={onTextInputBlur}
       />
       {!isEmptyResults ? (
         <ListOfFilms
